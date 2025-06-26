@@ -1,7 +1,6 @@
-package com.myerp.entity;
+package com.erp.entity;
 
 import java.time.LocalDateTime;
-import java.util.Date;
 
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
@@ -27,42 +26,52 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 @EntityListeners(AuditingEntityListener.class) // ★ 중요!
-	public class MaterialDto {
+public class MaterialDto {
 	
-		@Id
-	    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "matid_seq")
-	    @SequenceGenerator(name = "matid_seq", sequenceName = "matid_seq", initialValue = 1000001, allocationSize = 1)
-	    @Column(nullable = false)
-	    private int matid;
+	// 자재 ID
+	@Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "matid_seq")
+    @SequenceGenerator(name = "matid_seq", sequenceName = "matid_seq", initialValue = 1000001, allocationSize = 1)
+    @Column(nullable = false)
+    private int matid;
 
-	    @Column(nullable = false, length = 100)
-	    private String matnm;
+	// 자재명
+    @Column(nullable = false, length = 100)
+    private String matnm;
 
-	    @Column(nullable = false, length = 100, unique = true)
-	    private String matcd;
+    // 자재코드
+    @Column(nullable = false, length = 100, unique = true)
+    private String matcd;
 
-	    @Column(nullable = false, length = 50)
-	    private String matun;
+    // 자재 단위
+    @Column(nullable = false, length = 50)
+    private String matun;
 
-	    @Column(nullable = false)
-	    private int matuprc;
+    // 자재 단가
+    @Column(nullable = false)
+    private int matuprc;
 
-	    @Column
-	    private int matstq;
+    // 현재 재고 수량
+    @Column(nullable = false)
+    private int matstq;
 
-	    @CreatedDate
-	    @Column(updatable = false)
-	    private LocalDateTime matcrdt; // 등록일
+    // 자재 등록일
+    @CreatedDate
+    @Column(updatable = false)
+    private LocalDateTime matcrdt;
 
-	    @LastModifiedDate
-	    private LocalDateTime matupdt; // 수정일
+    // 자재 수정일
+    @LastModifiedDate
+    private LocalDateTime matupdt;
 
-	    @Column(nullable = false, length = 100)
-	    private String matcate;
+    // 자재 분류 (카테고리)
+    @Column(nullable = false, length = 100)
+    private String matcate;
 
-	    @Column(length = 500)
-	    private String matnote;
-	
+    // 비고
+    @Column(length = 500)
+    private String matnote;
+
 
 
 }
