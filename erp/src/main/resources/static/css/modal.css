@@ -1,0 +1,79 @@
+.modal_container {
+    z-index: 1000;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5);
+}
+.modal_con {
+    overflow-x: hidden;
+    max-height: 90%;
+    width: 90%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    border-radius: 6px;
+    padding: 45px 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.modal_con2 {
+    overflow-x: hidden;
+    max-height: 90%;
+    width: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    border-radius: 6px;
+    padding: 45px 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.modal_con > div, .modal_con2 > div {
+	width: 100%
+}
+.modal_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 20px;
+}
+
+.modal_header h2 {
+    font-size: 22px;
+    color: #666;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.modal_header h2::before {
+    content: "";
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background: #666;
+    border-radius: 50%;
+}
+.modal_header button {
+    padding: 0;
+}
+
+
+
+/* 모달 hidden css 시작 */
+#stockOut_modal.hidden {
+    display: none;
+}
+/* 모달 hidden css 끝 */
